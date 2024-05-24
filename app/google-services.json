@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1099311696307",
+    "project_id": "plantsparadise-93a11",
+    "storage_bucket": "plantsparadise-93a11.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1099311696307:android:914fda2a91066a0649e3c6",
+        "android_client_info": {
+          "package_name": "com.example.plantsparadise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsU_ZU2LxdjueqUyf39xhehgHI4fzXZCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
