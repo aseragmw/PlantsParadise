@@ -20,15 +20,16 @@
             android:id="@+id/plantItemPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:background="@drawable/rounded_background"
             android:backgroundTint="@color/white"
             android:padding="10dp"
             android:text="$50.00"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/plantTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/plantTitle" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/plantItemCount"
+            app:layout_constraintTop_toBottomOf="@+id/plantItemCount" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -46,7 +47,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="16dp"
             android:text="The Potted Head"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="1 piece"
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/plantTitle"

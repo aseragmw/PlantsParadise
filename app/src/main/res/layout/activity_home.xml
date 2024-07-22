@@ -85,6 +85,8 @@
         android:id="@+id/viewPager"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/current_pager_item"
         app:layout_constraintEnd_toStartOf="@+id/forwardArrow"
         app:layout_constraintStart_toEndOf="@+id/backArrow"

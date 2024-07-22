@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="20dp"
+    android:layout_marginTop="10dp"
     app:cardElevation="0dp"
     app:cardBackgroundColor="@android:color/transparent"
     app:cardPreventCornerOverlap="false"
@@ -13,40 +13,37 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/plantItemPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:background="@drawable/rounded_background"
             android:backgroundTint="@color/white"
             android:padding="10dp"
             android:text="$50.00"
             android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/plantTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/plantTitle" />
+            app:layout_constraintEnd_toEndOf="@+id/removeIcon"
+            app:layout_constraintStart_toStartOf="@+id/addIcon"
+            app:layout_constraintTop_toBottomOf="@+id/addIcon" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="86dp"
             android:layout_height="80dp"
             android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
         <TextView
             android:id="@+id/plantTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="20dp"
             android:text="The Potted Head"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -57,35 +54,31 @@
             android:id="@+id/plantItemCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:text="1 piece"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/plantTitle"
-            app:layout_constraintTop_toBottomOf="@+id/plantTitle"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/plantTitle" />
 
         <ImageView
             android:id="@+id/addIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/rounded_background"
             android:backgroundTint="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/plantItemCount"
-            app:layout_constraintEnd_toStartOf="@+id/removeIcon"
-            app:layout_constraintTop_toBottomOf="@+id/plantItemPrice"
+            app:layout_constraintStart_toStartOf="@+id/plantItemCount"
+            app:layout_constraintTop_toBottomOf="@+id/plantItemCount"
             app:srcCompat="@drawable/white_add_icon" />
 
         <ImageView
             android:id="@+id/removeIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:background="@drawable/rounded_background"
             android:backgroundTint="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/addIcon"
-            app:layout_constraintEnd_toEndOf="@+id/plantItemPrice"
+            app:layout_constraintStart_toEndOf="@+id/addIcon"
+            app:layout_constraintTop_toTopOf="@+id/addIcon"
             app:srcCompat="@drawable/white_remove_icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
