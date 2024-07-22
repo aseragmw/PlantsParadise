@@ -21,18 +21,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="373dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="20dp"
-        android:scaleType="fitXY"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Plants Paradise"
+        android:textColor="@android:color/black"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:srcCompat="@drawable/app_title" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
     <ImageView
         android:id="@+id/registerArrow"
         android:layout_width="33dp"
@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Register"
-        android:textColor="@color/green"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Continue Without Account"
-        android:textColor="@color/green"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,13 +99,13 @@
         android:id="@+id/login_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:text="Login"
-        android:textColor="@color/green"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
