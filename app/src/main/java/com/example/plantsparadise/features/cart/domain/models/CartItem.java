@@ -2,7 +2,9 @@ package com.example.plantsparadise.features.cart.domain.models;
 
 import com.example.plantsparadise.features.home.domain.models.Plant;
 
-public class CartItem {
+import java.io.Serializable;
+
+public class CartItem implements Serializable {
     private Plant plant;
     private int quantity;
     private double price;
@@ -11,6 +13,9 @@ public class CartItem {
         this.plant = plant;
         this.quantity = quantity;
         this.price = price;
+    }
+
+    public CartItem() {
     }
 
     public Plant getPlant() {

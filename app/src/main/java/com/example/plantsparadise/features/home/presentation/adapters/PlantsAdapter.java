@@ -18,10 +18,11 @@ import com.example.plantsparadise.databinding.PlantItemCardBinding;
 import com.example.plantsparadise.features.cart.presentation.viewmodels.CartViewModel;
 import com.example.plantsparadise.features.home.domain.models.Plant;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PlantsAdapter extends RecyclerView.Adapter<PlantsAdapter.PlantViewHolder> {
-    List<Plant> plantsList;
+    List<Plant> plantsList = new ArrayList<>();
     Context context;
     CartViewModel cartViewModel;
 

@@ -1,10 +1,15 @@
 package com.example.plantsparadise.features.home.domain.models;
 
-public class Plant {
+import java.io.Serializable;
+
+public class Plant implements Serializable {
     private String title;
     private String description;
     private String imgURL;
     private double price;
+
+    public Plant() {
+    }
 
     public Plant(String title, String description, String imgURL, double price) {
         this.title = title;

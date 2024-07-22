@@ -4,10 +4,23 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.plantsparadise.features.home.domain.models.Plant;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Cart {
+public class Cart implements Serializable {
     private String uid;
+
+    public Cart() {
+    }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "uid='" + uid + '\'' +
+                ", items=" + items +
+                '}';
+    }
+
     private List<CartItem> items;
 
     public Cart(String uid, List<CartItem> items) {

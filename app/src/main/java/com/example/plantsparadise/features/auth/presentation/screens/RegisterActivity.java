@@ -40,26 +40,26 @@ public class RegisterActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        viewModel =  AuthViewModel.getInstance(new AuthRepositoryImplWithFirebase(FirebaseAuth.getInstance()));
+        viewModel = AuthViewModel.getInstance(new AuthRepositoryImplWithFirebase(FirebaseAuth.getInstance()));
         cacheHelper = new CacheHelper(this);
         setupViews();
     }
 
     private void setupViews() {
         binding.login.setOnClickListener(v -> {
-            startActivity(new Intent(this,LoginActivity.class));
+            startActivity(new Intent(this, LoginActivity.class));
             finish();
         });
         binding.registerBtn.setOnClickListener(v -> {
             if (validateInput()) {
-                if(binding.password.getText().toString().equals(binding.cPassword.getText().toString())){
-                    viewModel.register(binding.username.getText().toString(), binding.email.getText().toString(),binding.password.getText().toString(), new SuccessOrFailureCallback() {
+                if (binding.password.getText().toString().equals(binding.cPassword.getText().toString())) {
+                    viewModel.register(binding.username.getText().toString(), binding.email.getText().toString(), binding.password.getText().toString(), new SuccessOrFailureCallback() {
                         @Override
                         public void onSuccess(Object successObject) {
                             FirebaseUser user = (FirebaseUser) successObject;
-                            cacheHelper.save(Constants.USER_EMAIL_CACHE,user.getEmail());
-                            cacheHelper.save(Constants.USER_ID_CACHE,user.getUid());
-                            cacheHelper.save(Constants.USER_FULLNAME_CACHE,user.getDisplayName());
+                            cacheHelper.save(Constants.USER_EMAIL_CACHE, user.getEmail());
+                            cacheHelper.save(Constants.USER_ID_CACHE, user.getUid());
+                            cacheHelper.save(Constants.USER_FULLNAME_CACHE, user.getDisplayName());
                             Toast.makeText(RegisterActivity.this, "Welcome " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
                             finish();
@@ -71,13 +71,11 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(RegisterActivity.this, msg.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
-                }
-                else{
+                } else {
                     Toast.makeText(this, "Password not matched", Toast.LENGTH_SHORT).show();
                 }
 
-            }
-            else{
+            } else {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             }
         });

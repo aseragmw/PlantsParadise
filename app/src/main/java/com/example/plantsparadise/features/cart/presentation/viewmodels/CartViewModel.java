@@ -1,14 +1,18 @@
 package com.example.plantsparadise.features.cart.presentation.viewmodels;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.plantsparadise.core.uitls.CacheHelper;
 import com.example.plantsparadise.core.uitls.Constants;
+import com.example.plantsparadise.features.cart.data.datasources.remote.CartRemoteDataSourceWithFirestore;
+import com.example.plantsparadise.features.cart.data.repository.CartRepoWithFirestore;
 import com.example.plantsparadise.features.cart.domain.models.Cart;
 import com.example.plantsparadise.features.cart.domain.models.CartItem;
 import com.example.plantsparadise.features.cart.domain.repository.CartRepository;
+import com.example.plantsparadise.features.cart.domain.usecases.PlaceOrderUsecase;
 import com.example.plantsparadise.features.home.domain.models.Plant;
 
 import java.util.ArrayList;
@@ -59,6 +63,30 @@ public class CartViewModel {
             cart.setValue(currentCart); // Notify observers
             cacheHelper.cacheCart(context, currentCart);
         }
+    }
+    public void clearCart() {
+        Cart currentCart = cart.getValue();
+        Log.e("in clear",currentCart.toString());
+        if (currentCart != null) {
+            for(CartItem item:currentCart.getItems()){
+                Log.e("in loop before",item.toString());
+            }
+            currentCart.getItems().clear();
+            for(CartItem item:currentCart.getItems()){
+                Log.e("in loop",item.toString());
+            }
+            cart.setValue(currentCart);
+            cacheHelper.cacheCart(context, currentCart);
+        }
+    }
+
+    public void placeOrder(){
+        PlaceOrderUsecase placeOrderUsecase = new PlaceOrderUsecase(new CartRepoWithFirestore(new CartRemoteDataSourceWithFirestore()));
+        placeOrderUsecase.execute(cart.getValue());
+        Log.e("in place order 1","hhh");
+        cartRepository.placeOrder(cart.getValue());
+        Log.e("in place order","hhh");
+        clearCart();
     }
 
     public double getTotalPrice(){

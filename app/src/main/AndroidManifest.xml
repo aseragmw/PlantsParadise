@@ -13,6 +13,12 @@
         android:theme="@style/Theme.PlantsParadise"
         tools:targetApi="31">
         <activity
+            android:name=".features.history.presentation.screens.OrderDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".features.history.presentation.screens.OrdersHitoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".features.auth.presentation.screens.LandingActivity"
             android:exported="false" />
         <activity
@@ -22,7 +28,6 @@
             android:name=".features.auth.presentation.screens.LoginActivity"
             android:exported="false" />
         <activity
-
             android:name=".features.home.presentation.screens.HomeActivity"
             android:exported="false" />
         <activity
