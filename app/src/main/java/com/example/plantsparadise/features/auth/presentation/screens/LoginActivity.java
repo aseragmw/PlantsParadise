@@ -2,6 +2,7 @@ package com.example.plantsparadise.features.auth.presentation.screens;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -50,6 +51,8 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         });
         binding.loginBtn.setOnClickListener(v -> {
+            binding.progressBar2.setVisibility(View.VISIBLE);
+            binding.loginBtn.setVisibility(View.INVISIBLE);
             if (validateInput()) {
                 viewModel.login(binding.username.getText().toString(), binding.password.getText().toString(), new SuccessOrFailureCallback() {
                     @Override
@@ -73,7 +76,10 @@ public class LoginActivity extends AppCompatActivity {
             else{
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             }
-        });
+                    binding.progressBar2.setVisibility(View.INVISIBLE);
+                    binding.loginBtn.setVisibility(View.VISIBLE);
+        }
+        );
         binding.backBtn.setOnClickListener(v -> {
             finish();
         });

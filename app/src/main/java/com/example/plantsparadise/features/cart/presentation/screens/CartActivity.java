@@ -70,8 +70,11 @@ public class CartActivity extends AppCompatActivity {
 
     private void setupViews() {
         binding.placeOrderBtn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+                binding.progressBar3.setVisibility(View.VISIBLE);
+                binding.placeOrderBtn.setVisibility(View.INVISIBLE);
                 boolean hasUser = new CacheHelper(getApplicationContext()).contains(USER_ID_CACHE);
                 if(hasUser){
                     cartViewModel.placeOrder();
@@ -83,6 +86,8 @@ public class CartActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
                 }
+                binding.progressBar3.setVisibility(View.INVISIBLE);
+                binding.placeOrderBtn.setVisibility(View.VISIBLE);
             }
         });
         binding.cartCount.setText(cartItems.size()+"");
